@@ -57,7 +57,7 @@ int Automata_validate(Automata* automata, char* string)
         state = automata->data[state][string[i] - 'a'];
     }
 
-    return (state == automata->size) ? 1 : 0;
+    return state == automata->size;
 }
 
 void Automata_print(Automata* automata)
