@@ -54,7 +54,7 @@ void Automata_print(Automata* automata)
     {
         for (int j = 0; j < 2; ++j)
         {
-            printf("automata[%d][%d]: %d\n", i, j, automata->data[i][j]);
+            printf("δ(q%d, '%c') = q%d\n", i, (j + 'a'), automata->data[i][j]);
         }
     }
 }
