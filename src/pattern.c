@@ -43,12 +43,6 @@ Pattern* Pattern_build(char* string)
     return temp;
 }
 
-void Pattern_free(Pattern* pattern)
-{
-    free(pattern->table);
-    free(pattern);
-}
-
 void Pattern_print(Pattern* pattern)
 {
     printf("Pattern: `%s` size: %d - ", pattern->pattern, pattern->size);
@@ -84,4 +78,10 @@ int Pattern_match(Pattern* pattern, char* string)
     }
 
     return (len == pattern->size) ? (i - len) : -1;
+}
+
+void Pattern_free(Pattern* pattern)
+{
+    free(pattern->table);
+    free(pattern);
 }
