@@ -11,6 +11,7 @@ struct __automata_t
 typedef struct __automata_t Automata;
 
 Automata* Automata_construct(Pattern* pattern);
+Automata* Automata_build(char* string);
 int Automata_validate(Automata* automata, char* string);
 void Automata_print(Automata* automata);
 void Automata_free(Automata* automata);

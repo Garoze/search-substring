@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "automata.h"
+#include "pattern.h"
 
 Automata* Automata_construct(Pattern* pattern)
 {
@@ -28,6 +29,17 @@ Automata* Automata_construct(Pattern* pattern)
     {
         automata->data[pattern->size][i] = pattern->size;
     }
+
+    return automata;
+}
+
+Automata* Automata_build(char* string)
+{
+    Pattern* pattern = Pattern_build(string);
+
+    Automata* automata = Automata_construct(pattern);
+
+    Pattern_free(pattern);
 
     return automata;
 }
